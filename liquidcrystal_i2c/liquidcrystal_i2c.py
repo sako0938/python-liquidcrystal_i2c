@@ -3,7 +3,7 @@
 # License: MIT
 # Ported from: http://www.dfrobot.com/image/data/DFR0154/LiquidCrystal_I2Cv1-1.rar
 
-import smbus
+import smbus2
 import time
 
 class LiquidCrystal_I2C:
@@ -56,7 +56,7 @@ class LiquidCrystal_I2C:
 
     def __init__(self, addr, port, numlines=2, clear=True):
         self._addr = addr
-        self._smbus = smbus.SMBus(port)
+        self._smbus = smbus2.SMBus(port)
         self._backlightval = 0x08 # always on
 
         self._numlines = numlines
